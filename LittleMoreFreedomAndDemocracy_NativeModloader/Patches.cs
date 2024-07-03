@@ -1,17 +1,97 @@
 ﻿using HarmonyLib;
 using RSG;
-using System;
-using System.Threading.Tasks;
 using Steamworks;
 using Steamworks.Ugc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace LittleMoreFreedomAndDemocracy_NativeModloader
 {
     public static class Patches
     {
+        [HarmonyTranspiler]
+        [HarmonyPatch(typeof(WorkshopMaps), nameof(WorkshopMaps.uploadMap))]
+        public static IEnumerable<CodeInstruction> uploadMap_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        {
+            var codes = new List<CodeInstruction>(instructions);
+
+            Label label = generator.DefineLabel();
+
+            for (int i = 0; i < codes.Count; i++)
+            {
+                if (codes[i].opcode == OpCodes.Stloc_2 && codes[i + 3].opcode == OpCodes.Ldloc_0)
+                {
+                    Console.WriteLine("FOUND TRANSITION");
+
+                    codes[i + 2] = new CodeInstruction(OpCodes.Brtrue_S, label);
+                }
+
+                if (codes[i].opcode == OpCodes.Ldloc_1 && codes[i - 1].opcode == OpCodes.Ret && codes[i + 2].opcode == OpCodes.Dup)
+                {
+                    Console.WriteLine("FOUND LABEL");
+
+                    codes[i].labels.Add(label);
+                }
+
+                else
+                {
+                    Console.WriteLine("UNFOUNDED");
+                }
+            }
+
+            return codes.AsEnumerable();
+        }
+
+
+        /*public static IEnumerable<CodeInstruction> UploadMapTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        {
+            var codes = new List<CodeInstruction>(instructions);
+
+            int indexStart = codes.FindIndex(instr => instr.opcode == OpCodes.Ldfld && ((FieldInfo)instr.operand).Name == "width") - 1;
+            int indexStop = codes.FindIndex(instr => instr.opcode == OpCodes.Ldstr && (string)instr.operand == "Not a square world!") + 5;
+            int indexLabel = codes.FindIndex(instr => instr.opcode == OpCodes.Stloc_2) + 2;
+
+            if (indexStart == -1)
+            {
+                Console.WriteLine("uploadMap_Transpiler: indexStart not found");
+                return codes.AsEnumerable();
+            }
+
+            if (indexStop == -1)
+            {
+                Console.WriteLine("uploadMap_Transpiler: indexStop not found");
+                return codes.AsEnumerable();
+            }
+
+            if (indexLabel == -1)
+            {
+                Console.WriteLine("uploadMap_Transpiler: indexLabel not found");
+                return codes.AsEnumerable();
+            }
+
+            Label label = generator.DefineLabel();
+            codes[indexStop + 1].labels.Add(label);
+
+            codes.Insert(indexLabel + 1, new CodeInstruction(OpCodes.Brtrue_S, label));
+            codes.RemoveAt(indexLabel);
+
+            codes.RemoveRange(indexStart, indexStop);
+
+            foreach (var item in codes)
+            {
+                Console.WriteLine(item?.opcode.Name + "      " + item?.operand?.ToString());
+            }
+
+            return codes.AsEnumerable();
+        }
+
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(WorkshopMaps), "uploadMap")]
+        [HarmonyPatch(typeof(WorkshopMaps), nameof(WorkshopMaps.uploadMap))]
         public static bool uploadMap_Prefix(ref Promise __result)
         {
             Promise promise = new Promise();
@@ -92,6 +172,6 @@ namespace LittleMoreFreedomAndDemocracy_NativeModloader
             }, TaskScheduler.FromCurrentSynchronizationContext());
             __result = promise;
             return false;
-        }
+        }*/
     }
 }
