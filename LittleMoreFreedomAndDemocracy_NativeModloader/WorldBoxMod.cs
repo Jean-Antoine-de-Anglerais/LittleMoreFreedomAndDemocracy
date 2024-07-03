@@ -24,9 +24,9 @@ namespace LittleMoreFreedomAndDemocracy_NativeModloader
             if (!File.Exists(Path.Combine(path, "MonoMod.RuntimeDetour.dll"))) { File.WriteAllBytes(Path.Combine(path, "MonoMod.RuntimeDetour.dll"), Assemblies.Resource.MonoMod_RuntimeDetour); }
 
             Assembly.LoadFrom(Path.Combine(path, "0Harmony.dll"));
-            Assembly.LoadFrom(Path.Combine(path, "Mono.Cecil.dll"));
-            Assembly.LoadFrom(Path.Combine(path, "MonoMod.Utils.dll"));
-            Assembly.LoadFrom(Path.Combine(path, "MonoMod.RuntimeDetour.dll"));
+            //Assembly.LoadFrom(Path.Combine(path, "Mono.Cecil.dll"));
+            //Assembly.LoadFrom(Path.Combine(path, "MonoMod.Utils.dll"));
+            //Assembly.LoadFrom(Path.Combine(path, "MonoMod.RuntimeDetour.dll"));
 
             Debug.Log($"{MethodBase.GetCurrentMethod().DeclaringType.Namespace} loaded!");
             GameObject gameObject = new GameObject(MethodBase.GetCurrentMethod().DeclaringType.Namespace);

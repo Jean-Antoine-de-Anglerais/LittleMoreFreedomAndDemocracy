@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 
-namespace LittleMoreFreedomAndDemocracy_NativeModloader
+namespace LittleMoreFreedomAndDemocracy_BepInEx
 {
     public static class Patches
     {

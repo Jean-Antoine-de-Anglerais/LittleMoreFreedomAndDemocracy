@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleMoreFreedomAndDemocracy_NativeModloader", "LittleMoreFreedomAndDemocracy_NativeModloader\LittleMoreFreedomAndDemocracy_NativeModloader.csproj", "{894E43B1-218A-4CD6-AD9D-F7726994ABA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleMoreFreedomAndDemocracy_BepInEx", "LittleMoreFreedomAndDemocracy_BepInEx\LittleMoreFreedomAndDemocracy_BepInEx.csproj", "{2B9C96B5-5320-44C9-A20C-C3D3FCD0BACA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{894E43B1-218A-4CD6-AD9D-F7726994ABA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{894E43B1-218A-4CD6-AD9D-F7726994ABA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{894E43B1-218A-4CD6-AD9D-F7726994ABA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9C96B5-5320-44C9-A20C-C3D3FCD0BACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9C96B5-5320-44C9-A20C-C3D3FCD0BACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9C96B5-5320-44C9-A20C-C3D3FCD0BACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9C96B5-5320-44C9-A20C-C3D3FCD0BACA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
