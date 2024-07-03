@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
 [assembly: AssemblyTitle("A Little More Freedom And Democracy")]
-[assembly: AssemblyDescription("This mod allows you to upload maps of any shape (if you mean only rectangles by \"any shape\") and size to the Steam Workshop. I think it would be very useful for mapmakers and people who write the histories of their worlds.")]
+[assembly: AssemblyDescription("This mod allows you to upload maps of any shape (if you mean only rectangles by \"any shape\") and size to the Steam Workshop.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jean-Antoine d'Anglerais")]
+[assembly: AssemblyCompany("Jean-Antoine d'Anglerais (le_ombre)")]
 [assembly: AssemblyProduct("A Little More Freedom And Democracy")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]

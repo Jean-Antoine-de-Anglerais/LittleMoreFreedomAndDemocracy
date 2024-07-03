@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("A Little More Freedom And Democracy")]
-[assembly: AssemblyDescription("This mod allows you to upload maps of any shape (if you mean only rectangles by \"any shape\") and size to the Steam Workshop.")]
+[assembly: AssemblyTitle("LittleMoreFreedomAndDemocracy_NCMS")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jean-Antoine d'Anglerais (le_ombre)")]
-[assembly: AssemblyProduct("A Little More Freedom And Democracy")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("LittleMoreFreedomAndDemocracy_NCMS")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("2b9c96b5-5320-44c9-a20c-c3d3fcd0baca")]
+[assembly: Guid("05390b67-1b6b-498f-9f07-2fac763420ea")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
@@ -31,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

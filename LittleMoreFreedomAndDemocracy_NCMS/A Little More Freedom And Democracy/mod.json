@@ -1,0 +1,8 @@
+{
+  "name": "A Little More Freedom And Democracy",
+  "author": "Jean-Antoine d'Anglerais (le_ombre)",
+  "version": "2.0.0.0",
+  "targetGameBuild": 558,
+  "description": "This mod allows you to upload maps of any shape (if you mean only rectangles by \"any shape\") and size to the Steam Workshop.",
+  "iconPath": "icon.png"
+}
